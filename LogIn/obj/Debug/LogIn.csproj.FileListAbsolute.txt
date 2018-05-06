@@ -1,0 +1,10 @@
+C:\Users\Volodin\Documents\Visual Studio 2015\Projects\LogIn\LogInTest\LogIn\bin\Debug\LogIn.dll
+C:\Users\Volodin\Documents\Visual Studio 2015\Projects\LogIn\LogInTest\LogIn\bin\Debug\LogIn.pdb
+C:\Users\Volodin\Documents\Visual Studio 2015\Projects\LogIn\LogInTest\LogIn\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Volodin\Documents\Visual Studio 2015\Projects\LogIn\LogInTest\LogIn\bin\Debug\WebDriver.dll
+C:\Users\Volodin\Documents\Visual Studio 2015\Projects\LogIn\LogInTest\LogIn\bin\Debug\WebDriver.Support.dll
+C:\Users\Volodin\Documents\Visual Studio 2015\Projects\LogIn\LogInTest\LogIn\bin\Debug\WebDriver.xml
+C:\Users\Volodin\Documents\Visual Studio 2015\Projects\LogIn\LogInTest\LogIn\bin\Debug\WebDriver.Support.xml
+C:\Users\Volodin\Documents\Visual Studio 2015\Projects\LogIn\LogInTest\LogIn\obj\Debug\LogIn.csprojResolveAssemblyReference.cache
+C:\Users\Volodin\Documents\Visual Studio 2015\Projects\LogIn\LogInTest\LogIn\obj\Debug\LogIn.dll
+C:\Users\Volodin\Documents\Visual Studio 2015\Projects\LogIn\LogInTest\LogIn\obj\Debug\LogIn.pdb

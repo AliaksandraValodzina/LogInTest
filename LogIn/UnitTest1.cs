@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-
+using System.Linq;
 
 namespace LogIn
 {
@@ -13,7 +13,7 @@ namespace LogIn
         private IWebDriver driver;
         private ChromeOptions options;
 
-        private string baceUrl = "https://www.gmail.com";
+        private string baceUrl = "https://www.myscore.com.ua/";
 
         [TestInitialize]
         public void TestInitialize()
@@ -22,15 +22,27 @@ namespace LogIn
             options.AddArgument(@"C:\Users\Volodin\Documents\Visual Studio 2015\Projects\LogIn\LogIn\DriverOptions");
 
             driver = new ChromeDriver(options);
+            driver.Navigate().GoToUrl(baceUrl);
             pageObject = new PageObject(driver);
-            driver.Navigate().GoToUrl(baceUrl);        }
+        }
 
 
         [TestMethod]
         public void LogInTest()
         {
-            pageObject.SetUserNameAndPassword("shura.volodina@gmail.com", "130419901512");
-            Assert.IsTrue(pageObject.IsTableVisible(), "Check that table appears on the page");
+            pageObject.LogIn("https://www.myscore.com.ua/", "330419901512");
+        }
+
+        [TestMethod]
+        public void ExeptionTest()
+        {
+            var testExeption = pageObject.NotExistinglement;
+            var attr1 = testExeption.GetAttribute("class");
+            var css = testExeption.GetCssValue("border-color");
+            var size = testExeption.GetType();
+            var one = testExeption.TagName;
+            testExeption.Click();
+
         }
 
         [TestCleanup]

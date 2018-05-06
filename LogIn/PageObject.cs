@@ -14,36 +14,33 @@ namespace LogIn
 
         #region Selectors
 
-        By userNameBy = By.CssSelector("input[type = 'email']");
-        By nextButtonBy = By.CssSelector("div[role = 'button']");
-        By passwordBy = By.CssSelector("input[type = 'password']");
-        By tableBy = By.Id("div[role = 'tabpanel']/tbody']");
+        By signInBy = By.Id("signIn");
+        By emailBy = By.Id("email");
+        By passwordBy = By.Id("passwd");
+        By submitBy = By.Id("login");
+        By accountNameBy = By.ClassName("email");
+
+        By notExistingElementBy = By.Id("signIn");
         #endregion
 
         public PageObject(IWebDriver driver)
         {
             this.driver = driver;
+            NotExistinglement = driver.FindElement(notExistingElementBy);
         }
 
-        public PageObject SetUserNameAndPassword(string userName, string password)
+        public IWebElement NotExistinglement { get; set; }
+
+        public PageObject LogIn(string userName, string password)
         {
-            driver.FindElement(userNameBy).Clear();
-            driver.FindElement(userNameBy).SendKeys(userName);
-            driver.FindElement(nextButtonBy).Click();
-
-            this.WaitUntilElementExists(passwordBy);
-            driver.FindElement(passwordBy).Clear();
+            driver.FindElement(signInBy).Click();
+            driver.FindElement(emailBy).SendKeys(userName);
             driver.FindElement(passwordBy).SendKeys(password);
-            driver.FindElement(nextButtonBy).Click();
+            driver.FindElement(submitBy).Click();
 
-            this.WaitUntilElementExists(tableBy);
+            WaitUntilElementExists(accountNameBy);
 
             return this;
-        }
-
-        public bool IsTableVisible()
-        {
-            return driver.FindElement(tableBy).Displayed;
         }
 
         public IWebElement WaitUntilElementExists(By elementLocator, int timeout = 10)
